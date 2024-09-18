@@ -3,7 +3,7 @@
 Yhteen tauluun kohdistuvat kyselyt
 select* from goal;
 
-![Screenshot](Screenshot_2024-09-18_20114117.png)
+![Screenshot](../Screenshot_2024-09-18_20114117.png)
 
 select name, type from airport where iso_country = "FI";
 
