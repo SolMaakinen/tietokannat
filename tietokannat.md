@@ -7,6 +7,8 @@ select* from goal;
 
 select name, type from airport where iso_country = "FI";
 
+![Screenshot](Screenshot 2024-09-18 120901.png)
+
 select name from airport where iso_country = "FI" order by name asc;
 
 select name, type from airport where iso_country = "FI" order by type, name;
