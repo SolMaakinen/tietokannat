@@ -5,6 +5,8 @@ select* from goal;
 
 !(Screenshot 202024-09-18 20114117.png)
 
+https://github.com/SolMaakinen/tietokannat/blob/673676fd8bebec9bbc032d61a152a557c9dcdc1d/Screenshot%202024-09-18%20125234.png
+
 select name, type from airport where iso_country = "FI";
 
 ![Screenshot](Screenshot%2024-09-18%120901.png)
