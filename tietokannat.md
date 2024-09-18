@@ -11,7 +11,7 @@ select name, type from airport where iso_country = "FI";
 
 select name from airport where iso_country = "FI" order by name asc;'
 
-![Screenshot]Screenshot%2024-09-18%121527.png)
+![Screenshot](Screenshot%2024-09-18%121527.png)
 
 select name, type from airport where iso_country = "FI" order by type, name;
 
