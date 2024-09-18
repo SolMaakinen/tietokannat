@@ -1,6 +1,6 @@
 # Tietokannat
 
-Yhteen tauluun kohdistuvat kyselyt  
+Yhteen tauluun kohdistuvat kyselyt:
 `select * from goal;`
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/3c816e06e35bde5dddca210c2d98b49c047fa34d/Screenshot%202024-09-18%20114117.png)
@@ -36,3 +36,25 @@ Yhteen tauluun kohdistuvat kyselyt
 `select distinct co2_budget from game;`
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/0e0f2c48fb1a7819e591af2ee25b761a0bd336cd/Screenshot%202024-09-18%20125234.png)
+
+Where-osan liitosehto:
+
+select country.name as "country name",airport.name as "airport name" from airport, country where airport.iso_country = country.iso_country and country.name = "Iceland";
+
+select airport.name as "airport name" from airport,country where airport.iso_country = country.iso_country and country.name = "France" and airport.type = "large_airport";
+
+select country.name as country_name,airport.name as airport_name from airport, country where airport.iso_country = country.iso_country and country.continent = "AN";
+
+select elevation_ft from airport, game where location = ident and screen_name = "Heini";
+
+select elevation_ft*0.3048 as elevation_m from airport, game where location = ident and screen_name = "Heini";
+
+select name from airport, game where location = ident and screen_name = "Ilkka";
+
+select country.name from airport, game, country where location = ident and airport.iso_country = country.iso_country and screen_name = "Ilkka";
+
+select name from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Heini";
+
+select airport.name from airport, game, goal, goal_reached where ident = location and game.id = game_id and goal.id = goal_id and screen_name = "Ilkka" and goal.name = "CLOUDS";
+
+select country.name from country, airport, game, goal, goal_reached where airport.iso_country = country.iso_country and ident = location and game.id = game_id and goal.id = goal_id and screen_name = "Ilkka" and goal.name = "CLOUDS";
