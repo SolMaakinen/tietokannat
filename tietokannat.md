@@ -3,7 +3,7 @@
 Yhteen tauluun kohdistuvat kyselyt
 select* from goal;
 
-(https://github.com/SolMaakinen/tietokannat/blob/3c816e06e35bde5dddca210c2d98b49c047fa34d/Screenshot%202024-09-18%20114117.png)
+https://github.com/SolMaakinen/tietokannat/blob/3c816e06e35bde5dddca210c2d98b49c047fa34d/Screenshot%202024-09-18%20114117.png
 
 select name, type from airport where iso_country = "FI";
 
