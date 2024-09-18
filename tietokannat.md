@@ -7,7 +7,7 @@ select* from goal;
 
 select name, type from airport where iso_country = "FI";
 
-(Screenshot 2024-09-18 120901.png)
+[(Screenshot 2024-09-18 120901.png)](https://github.com/SolMaakinen/tietokannat/blob/58548d99a9fb40a4323da4fbbe08a928193972ef/Screenshot%202024-09-18%20120901.png)
 
 select name from airport where iso_country = "FI" order by name asc;'
 
