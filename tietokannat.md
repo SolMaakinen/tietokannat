@@ -2,7 +2,9 @@
 
 Yhteen tauluun kohdistuvat kyselyt
 select* from goal;
+
 (Screenshot 2024-09-18 114117.png)
+
 select name, type from airport where iso_country = "FI";
 
 select name from airport where iso_country = "FI" order by name asc;
