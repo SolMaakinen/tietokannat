@@ -205,7 +205,6 @@
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20141300.png)
 
-# Päivityskysely harjoitukset:
 
 # Päivityskysely harjoitukset:
 
