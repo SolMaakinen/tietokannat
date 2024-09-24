@@ -1,4 +1,4 @@
-# Tietokannat
+![image](https://github.com/user-attachments/assets/434a938e-2c77-4e73-b1a9-bc7a3a06c0bd)# Tietokannat
 
 # Yhteen tauluun kohdistuvat kyselyt:
 
@@ -98,3 +98,22 @@
 `select country.name from country, airport, game, goal, goal_reached where airport.iso_country = country.iso_country and ident = location and game.id = game_id and goal.id = goal_id and screen_name = "Ilkka" and goal.name = "CLOUDS";`
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/18a4b96b70f56bdbcb6da8e0726b8d2653b24b83/Screenshot%202024-09-18%20141139.png)
+
+# Join harjoitukset:
+
+1.
+`select country.name as "country name", airport.name as "airport name" from country inner join airport on airport.iso_country = country.iso_country where country.name = "Finland" and scheduled_service = "yes";`
+
+
+
+3.
+`select screen_name, airport.name from game inner join airport on location = ident;`
+
+4.
+`select screen_name, country.name from game inner join airport on location = ident inner join country on airport.iso_country = country.iso_country;`
+
+5.
+`select airport.name, screen_name from airport left join game on ident = location where name like "%Hels%";`'
+
+6.
+`select name, screen_name from goal left join goal_reached on goal.id = goal_id  left join game on game.id = game_id;`
