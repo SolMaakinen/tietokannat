@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/434a938e-2c77-4e73-b1a9-bc7a3a06c0bd)# Tietokannat
+# Tietokannat
 
 # Yhteen tauluun kohdistuvat kyselyt:
 
