@@ -101,8 +101,6 @@
 
 # Join harjoitukset:
 
-# Join harjoitukset:
-
 1.
 `select country.name as "country name", airport.name as "airport name" from country inner join airport on airport.iso_country = country.iso_country where country.name = "Finland" and scheduled_service = "yes";`
 
@@ -128,28 +126,30 @@
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/b2cf71aef023acf2b341b31d81332663ff8f8583/Screenshot%202024-09-24%20131008.png)
 
+# Sisäkysely harjoitukset:
 
 1.
-`select country.name as "country name", airport.name as "airport name" from country inner join airport on airport.iso_country = country.iso_country where country.name = "Finland" and scheduled_service = "yes";`
+`select name from country where iso_country in( select iso_country from airport where name like "Satsuma%");`
 
-https://github.com/SolMaakinen/tietokannat/blob/b1d26c4552f246bf21b2f9d6b7e24343c7245cb7/Screenshot%202024-09-24%20131541.png
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20133954.png)
 
 2.
-`select screen_name, airport.name from game inner join airport on location = ident;`
+`select name from airport where iso_country in(select iso_country from country where name = "Monaco");`
 
-https://github.com/SolMaakinen/tietokannat/blob/b2cf71aef023acf2b341b31d81332663ff8f8583/Screenshot%202024-09-24%20125528.png
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20134202.png)
 
 3.
-`select screen_name, country.name from game inner join airport on location = ident inner join country on airport.iso_country = country.iso_country;`
+`select screen_name from game where id in (select game_id from goal_reached where goal_id in (select id from goal where name = "CLOUDS"));`
 
-https://github.com/SolMaakinen/tietokannat/blob/b2cf71aef023acf2b341b31d81332663ff8f8583/Screenshot%202024-09-24%20125851.png
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20134348.png)
 
 4.
-`select airport.name, screen_name from airport left join game on ident = location where name like "%Hels%";`
+`select country.name from country where iso_country not in (select airport.iso_country from airport);`
 
-https://github.com/SolMaakinen/tietokannat/blob/b2cf71aef023acf2b341b31d81332663ff8f8583/Screenshot%202024-09-24%20130427.png
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20134537.png)
 
 5.
-`select name, screen_name from goal left join goal_reached on goal.id = goal_id  left join game on game.id = game_id;`
+`select name from goal where id not in (select goal.id from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Heini");`
 
-https://github.com/SolMaakinen/tietokannat/blob/b2cf71aef023acf2b341b31d81332663ff8f8583/Screenshot%202024-09-24%20131008.png
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20134706.png)
+
