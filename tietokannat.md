@@ -1,6 +1,6 @@
 # Tietokannat
 
-#Yhteen tauluun kohdistuvat kyselyt:
+# Yhteen tauluun kohdistuvat kyselyt:
 
 1.
 `select * from goal;`
