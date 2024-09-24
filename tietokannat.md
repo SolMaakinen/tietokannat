@@ -153,3 +153,65 @@
 
 ![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/7109dfedbff4142312a0a34d2fee9cb84572896a/Screenshot%202024-09-24%20134706.png)
 
+# Koostetieto kyselyt harjoitukset:
+
+1.
+`select max(elevation_ft) from airport;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20135444.png)
+
+2.
+`select continent, count(*) from country group by continent;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20135631.png)
+
+3.
+`select screen_name, count(*) from game, goal_reached where id = game_id group by screen_name;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20135907.png)
+
+4.
+`select screen_name from game where co2_consumed in (select min(co2_consumed) from game);`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20140149.png)
+
+5.
+`select country.name, count(*) from airport, country where airport.iso_country = country.iso_country group by country.iso_country order by count(*) desc limit 50;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20140511.png)
+
+6.
+`select country.name from airport, country where airport.iso_country = country.iso_country group by country.iso_country having count(*) > 1000;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20140720.png)
+
+7.
+`select name from airport where elevation_ft in (select max(elevation_ft) from airport);`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20140859.png)
+
+8.
+`select name from country where iso_country in (select iso_country from airport where elevation_ft in (select max(elevation_ft) from airport));`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20141021.png)
+
+9.
+`select count(*) from game, goal_reached where id = game_id and screen_name = "Vesa" group by screen_name;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20141125.png)
+
+10.
+`select name from airport where latitude_deg in( select min(latitude_deg) from airport);`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/8cfdd9a071a311c732bb591dcf0060ece680391a/Screenshot%202024-09-24%20141300.png)
+
+# Päivityskysely harjoitukset:
+
+# Päivityskysely harjoitukset:
+
+1.
+`update game set location = (select ident from airport where name = "Nottingham Airport"), co2_consumed = co2_consumed + 500 where screen_name = "Vesa"; select * from game;`
+
+![Screenshot](https://raw.githubusercontent.com/SolMaakinen/tietokannat/10858de206c013eaf9fb463a07d8b907123eaa29/Screenshot%202024-09-24%20150326.png)
+
+
